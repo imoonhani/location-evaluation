@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Save Web Form Data to Spreadsheets - Location eveluation Form</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/EAwsozvv7cEdm1k9/',
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
+</script>
+</head>
+<body>
+    <h1>Location eveluation</h1>
+  <form id="myForm">
+    <label>Staff Name</label>
+    <input name="Staff_name" />
+    <label>MRN</label>
+    <input name="MRN" />
+    <br/>
+    <br/>
+    <label>Location</label>
+    <input type="radio" id="Location" name="Location" value="ACC" /> ACC
+    <input type="radio" id="Location" name="Location" value="ONCOLOGY" /> ONCOLOGY
+    <input type="radio" id="Location" name="Location" value="CARDIAC" /> CARDIAC<br/>
+    <br/>
+    <label>Environment and Facilities</label>
+    <br/>
+    <input type="radio" id="Environment and Facilities" name="Environment and Facilities" value="0-3" /> 0-3 as poor<br/>
+    <input type="radio" id="Environment and Facilities" name="Environment and Facilities" value="4-6" /> 4-6 as decent<br/>
+    <input type="radio" id="Environment and Facilities" name="Environment and Facilities" value="7-9" /> 7-9 as good<br/>
+    <br/>
+    <br/>
+    <label>Time access to service</label>
+    <br/>
+    <input type="radio" id="Time access to service" name="Time access to service" value="0-3" /> 0-3 as poor<br/>
+    <input type="radio" id="Time access to service" name="Time access to service" value="4-6" /> 4-6 as decent<br/>
+    <input type="radio" id="Time access to service" name="Time access to service" value="7-9" /> 7-9 as good<br/>
+    <br/>
+    <br/>
+    <label>Staff experience and engagement </label>
+    <br/>
+    <input type="radio" id="Staff experience and engagement" name="Staff experience and engagement" value="0-3" /> 0-3 as poor<br/>
+    <input type="radio" id="Staff experience and engagement" name="TStaff experience and engagement" value="4-6" /> 4-6 as decent<br/>
+    <input type="radio" id="Staff experience and engagement" name="Staff experience and engagement" value="7-9" /> 7-9 as good<br/>
+    <br/>
+    <br/>
+    <label>Information and communication </label>
+    <br/>
+    <input type="radio" id="Information and communication" name="Information and communication" value="0-3" /> 0-3 as poor<br/>
+    <input type="radio" id="Information and communication" name="Information and communication" value="4-6" /> 4-6 as decent<br/>
+    <input type="radio" id="Information and communication" name="Information and communication" value="7-9" /> 7-9 as good<br/>
+    <br/>
+    <br/>
+    <label>Patient voice and response </label>
+    <br/>
+    <input type="radio" id="Patient voice and response" name="Patient voice and response" value="0-3" /> 0-3 as poor<br/>
+    <input type="radio" id="Patient voice and response" name="Patient voice and response" value="4-6" /> 4-6 as decent<br/>
+    <input type="radio" id="Patient voice and response" name="Patient voice and response" value="7-9" /> 7-9 as good<br/>
+    <br/>
+  </form>
+  <button onclick="SubForm()">Submit</button>
+</body>
+</html>
